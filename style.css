@@ -1,0 +1,434 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+@import url(https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Zen+Kaku+Gothic+Antique&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("../images/AldotheApache.ttf");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Kode+Mono:wght@400..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --navbar-text-color: hsl(0, 0%, 0%);
+  --navbar-text-color-focus: rgb(150, 125, 125);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: bolds;
+  overflow-x: hidden;
+  background: #000;
+}
+
+.container {
+  max-width: 1000px;
+
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar {
+  --navbar-height: 10vh;
+  position: fixed;
+  z-index: 7;
+
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  left: 0;
+  right: 0;
+}
+
+.navbar-container {
+  display: flex;
+
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar-item {
+  margin: 0.4em;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.home-link,
+.navbar-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.home-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+}
+
+.navbar-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+
+}
+
+.navbar-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+  background-color: var(--navbar-bg-contrast);
+}
+
+.navbar-logo {
+  color: #057df5;
+  font-size: 22px;
+  letter-spacing: 4.68px;
+  font-family: Schluber;
+
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 0.5em;
+}
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+
+  transition: 0.5s;
+  border-radius: 50%;
+  color: #057df5;
+  z-index: 2;
+  padding: 5px;
+  justify-content: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: none;
+}
+
+.icon-bar {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin: 2px;
+
+  border-radius: 40px;
+  background-color: #057df5;
+}
+
+#navbar-toggle:is(:focus, :hover) .icon-bar {
+  background-color: #e4f0fc;
+  border: none;
+  transition: 0.5s;
+}
+.btnfortogg {
+  border: none;
+  margin-top: 20px;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+  position: absolute;
+  border: none;
+  margin: 0;
+  width: 30px;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+  transform: rotate(45deg);
+  transition: 0.5s;
+  border: none;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+  opacity: 0;
+  border: none;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+  transform: rotate(-45deg);
+  transition: 0.5s;
+  border: none;
+}
+
+#navbar-menu {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  position: fixed;
+  top: 0px;
+  border: none;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
+ 
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+  padding: 1em;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .herosec {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 200px;
+    flex-direction: row;
+    gap: 100px;
+
+  }
+  .left-side{
+    width: 50%;
+  }
+  .right-side img{
+    width: 50%;
+
+  }
+  .herosec h1 {
+    color: #999;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .herosec h2 {
+    color: #fff;
+    font-size: 82px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    font-weight: 400;
+  }
+  .card-section h1 {
+    text-align: center;
+    align-items: center;
+    padding-top: 50px;
+    margin: 50px;
+    font-size: 64px;
+    
+    font-weight: 400;
+    color: #fff;
+  }
+
+}
+@media only screen and (max-width: 767px) {
+  .herosec {
+    display: flex;
+
+    margin: 15px;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+  .card-section h1 {
+    text-align: center;
+    align-items: center;
+    padding-top: 50px;
+    margin: 50px;
+    font-size: 24px;
+    gap: 100px;
+    font-weight: 400;
+    color: #fff;
+  }
+  .left-side{
+    width: 50%;
+    order: 2;
+  }
+  .right-side img{
+    width: 50%;
+    order: 1;
+    
+  }
+  .herosec h1 {
+    color: #999;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+
+    margin-top: 20px;
+  }
+  .herosec h2 {
+    color: #fff;
+    font-size: 45px;
+    margin-top: 20px;
+    font-family: "Kode Mono", monospace;
+
+    font-weight: 400;
+  }
+
+}
+.introsection {
+  display: flex;
+
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  text-align: center;
+}
+
+.introsection img {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  margin-top: 65px;
+}
+
+@media only screen and (max-width: 767px) {
+  .introsection {
+    display: flex;
+
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-direction: column;
+
+    height: 55vh;
+  }
+
+
+  .introsection img {
+    height: 45vh;
+
+    object-fit: cover;
+  }
+}
+
+.links {
+  height: 70px;
+  width: 370px;
+
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.links img {
+  margin: 10px;
+}
+
+.links img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+
+
+.card-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  width: 100%;
+
+
+  border-radius: 8px;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 20px;
+  background-color: #111;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.199);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin: 15px 0;
+  font-size: 1.2em;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px;
+
+  padding-bottom: 20px;
+}
+
+.card-buttons button {
+  padding: 10px 100px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: #057df5;
+  color: white;
+  font-size: 1em;
+  border: 1px solid #121212;
+}
+
+/* Hide scrollbar */
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
