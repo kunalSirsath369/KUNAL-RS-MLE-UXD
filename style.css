@@ -259,7 +259,7 @@ body {
   .herosec {
     display: flex;
 
-    margin: 15px;
+    margin: 20px;
     justify-content: center;
     flex-direction: column;
 
@@ -275,12 +275,15 @@ body {
     color: #fff;
   }
   .left-side{
-    width: 50%;
+    margin: 20px;
+
     order: 2;
   }
   .right-side img{
-    width: 50%;
+    width: 100vw;
     order: 1;
+    margin: 20px;
+
     
   }
   .herosec h1 {
