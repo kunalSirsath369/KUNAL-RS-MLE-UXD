@@ -258,7 +258,7 @@ body {
 @media only screen and (max-width: 767px) {
   .herosec {
     display: flex;
-
+        margin-top: 70px;
     margin: 15px;
     justify-content: center;
     flex-direction: column;
@@ -281,7 +281,7 @@ body {
   .right-side img{
     margin: 20px;
     order: 1;
-    width: 100vw;
+    width: 80vw;
     
   }
   .herosec h1 {
