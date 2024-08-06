@@ -275,11 +275,11 @@ body {
     color: #fff;
   }
   .left-side{
-    width: 50%;
+     margin: 20px;
     order: 2;
   }
   .right-side img{
-    width: 50%;
+ margin: 20px;
     order: 1;
     
   }
