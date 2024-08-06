@@ -279,8 +279,9 @@ body {
     order: 2;
   }
   .right-side img{
- margin: 20px;
+    margin: 20px;
     order: 1;
+    width: 100vw;
     
   }
   .herosec h1 {
